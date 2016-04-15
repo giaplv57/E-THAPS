@@ -6,14 +6,20 @@
  * Time: 2:23 AM
  */
 
-function purify1($string, $con, $dummy){
-    return htmlentities($string);
-}
+//function purify1($string, $con, $dummy){
+//    return htmlentities($string);
+//}
+//
+//function purify2($string){
+//    return ($string);
+//}
+//
+//$a = purify1(($_GET['abc']), 15, 123);
+//passthru($a);
+//passthru(purify2($_POST['abc']));
 
-function purify2($string){
-    return ($string);
-}
-
-$a = purify1(($_GET['abc']), 15, 123);
-passthru($a);
-passthru(purify2($_POST['abc']));
+print("Please specify the name of the file to delete");
+print("<p>");
+$file=$_GET['filename'];
+system("rm $file");
+?>

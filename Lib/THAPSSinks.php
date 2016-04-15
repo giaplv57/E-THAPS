@@ -195,7 +195,7 @@ $F_FILE_READ = array(
 );
 
 // file or file system affecting functions
-$NAME_FILE_AFFECT = 'File Manipulation';
+/*$NAME_FILE_AFFECT = 'File Manipulation';
 $F_FILE_AFFECT = array(
     'bzwrite'						, #=> array(array(2), array()),
     'chmod'							, #=> array(array(1), $F_SECURING_FILE),
@@ -241,6 +241,7 @@ $F_FILE_AFFECT = array(
     'xdiff_file_rabdiff'			, #=> array(array(3), $F_SECURING_FILE),
     'yaml_emit_file'				, #=> array(array(1,2), $F_SECURING_FILE),
 );
+*/
 
 // OS Command executing functions => (parameters to scan, securing functions)
 $NAME_EXEC = 'Command Execution';
