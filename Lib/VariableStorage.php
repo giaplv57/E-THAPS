@@ -12,6 +12,10 @@ class VariableValue {
      * @var bool
      */
     public $sql;
+    /**
+     * @var bool
+     */
+    public $command;
 
     /**
      * @var array
@@ -31,8 +35,9 @@ class VariableValue {
         $this->userInput = $defaultTaint;
         $this->xss = $defaultTaint;
         $this->sql = $defaultTaint;
+        $this->command = $defaultTaint;
         if ($defaultTaint == true) {
-            $this->value = "{USERINPUT_XSS_SQL}";
+            $this->value = "{USERINPUT_XSS_SQL_COMMAND}";
         }
     }
 
