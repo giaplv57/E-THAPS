@@ -10,6 +10,7 @@ require THAPS_DIR."PHP-Parser/lib/bootstrap.php";
 require THAPS_LIB_DIR . "PHPExtBridge.php";
 
 require THAPS_LIB_DIR."VulnerabilitySourcesAndSinks.php";
+require THAPS_LIB_DIR."THAPSSinks.php";
 require THAPS_LIB_DIR."VariableStorage.php";
 require THAPS_LIB_DIR."VulnerabilityStorage.php";
 require THAPS_LIB_DIR."VulnerabilityDescription.php";
@@ -230,7 +231,6 @@ try {
     $vulnerabilities = $bodyVisitor->getVulnerabilities()->get();
 
     $timeUsed = microtime(true)-$start;
-    //echo $nodeDumper->dump($stmts);
 
     // Lets group the vulnerabilities
     $groupedVulns = array();
