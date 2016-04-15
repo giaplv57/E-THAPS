@@ -33,11 +33,24 @@
 //------------ENDTEST3----------------//
 
 //------------TEST4 - PASSED----------------//
-$a = 'cat';
-$a .= $_GET['filename'];
-echo shell_exec($a);
-$b = 'cat';
-$b .= escapeshellcmd($_GET['filename']);
-echo shell_exec($b);
+//$a = 'cat';
+//$a .= $_GET['filename'];
+//echo shell_exec($a);
+//$b = 'cat';
+//$b .= escapeshellcmd($_GET['filename']);
+//echo shell_exec($b);
+//
+//echo shell_exec('cat "'.$_GET['command']).'"';
 //------------ENDTEST4----------------//
+
+//------------TEST5 - PASSED----------------//
+//$host = 'google';
+//if (isset( $_GET['host'] ) )
+//    $host = $_GET['host'];
+//system("nslookup " . $host);
+//------------ENDTEST5----------------//
+
+//------------TEST6 - PASSED----------------//
+
+//------------ENDTEST6----------------//
 ?>
