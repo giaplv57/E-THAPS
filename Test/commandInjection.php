@@ -27,7 +27,15 @@
 //passthru("rm $file");
 //------------ENDTEST2----------------//
 
-//------------TEST3 - UNPASSED----------------//
-echo shell_exec('cat '.$_GET['filename']);
+//------------TEST3 - PASSED----------------//
+//echo shell_exec('cat '.$_GET['filename']);
+//echo shell_exec('cat '.escapeshellcmd($_GET['filename']));
 //------------ENDTEST3----------------//
+
+//------------TEST4 - PASSED----------------//
+$a = 'cat';
+$a .= $_GET['filename'];
+echo shell_exec($a);
+//echo shell_exec('cat '.escapeshellcmd($_GET['filename']));
+//------------ENDTEST4----------------//
 ?>
