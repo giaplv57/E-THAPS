@@ -6,9 +6,14 @@
  * Time: 2:23 AM
  */
 
-function purify($string){
-    return $string;
+function purify1($string, $con, $dummy){
+    return htmlentities($string);
 }
 
-$a = purify($_GET['abc']);
-exec($a);
+function purify2($string){
+    return ($string);
+}
+
+$a = purify1(($_GET['abc']), 15, 123);
+passthru($a);
+passthru(purify2($_POST['abc']));
