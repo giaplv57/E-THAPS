@@ -36,6 +36,8 @@
 $a = 'cat';
 $a .= $_GET['filename'];
 echo shell_exec($a);
-//echo shell_exec('cat '.escapeshellcmd($_GET['filename']));
+$b = 'cat';
+$b .= escapeshellcmd($_GET['filename']);
+echo shell_exec($b);
 //------------ENDTEST4----------------//
 ?>
