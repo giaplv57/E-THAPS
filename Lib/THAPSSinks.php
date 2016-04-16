@@ -122,15 +122,15 @@ $F_CODE = array(
 // file inclusion functions => (parameters to scan, securing functions)
 $NAME_FILE_INCLUDE = 'File Inclusion';
 $F_FILE_INCLUDE = array(
-    'include' 						, #=> array(array(1), $F_SECURING_FILE),
-    'include_once' 					, #=> array(array(1), $F_SECURING_FILE),
-    'parsekit_compile_file'			, #=> array(array(1), $F_SECURING_FILE),
-    'php_check_syntax' 				, #=> array(array(1), $F_SECURING_FILE),
-    'require' 						, #=> array(array(1), $F_SECURING_FILE),
-    'require_once' 					, #=> array(array(1), $F_SECURING_FILE),
-    'runkit_import'					, #=> array(array(1), $F_SECURING_FILE),
-    'set_include_path' 				, #=> array(array(1), $F_SECURING_FILE),
-    'virtual' 						, #=> array(array(1), $F_SECURING_FILE)
+    'include' 						, #Param1
+    'include_once' 					, #Param1
+    'parsekit_compile_file'			, #Param1: parsekit_compile_file ( string $filename [, array &$errors [, int $options = PARSEKIT_QUIET ]] )
+    'require' 						, #Param1
+    'require_once' 					, #Param1
+    'set_include_path' 				, #Param1: set_include_path ( string $new_include_path )
+    'virtual' 						, #Param1: virtual ( string $filename )
+    //    'runkit_import'					, #=> array(array(1), $F_SECURING_FILE),
+    //    'php_check_syntax' 				, #=> array(array(1), $F_SECURING_FILE),
 );
 
 // // file affecting functions  => (parameters to scan, securing functions)
@@ -250,8 +250,7 @@ $F_EXEC = array(
     'expect_popen', #Param1: expect_popen ( string $command )
     'passthru',     #Param1: passthru ( string $command [, int &$return_var ] )
     'popen',        #Param1: popen ( string $command , string $mode )
-    'proc_open',    #Param1: proc_open ( string $cmd , array $descriptorspec , array &$pipes [,
-                                    # string $cwd [, array $env [, array $other_options ]]] )
+    'proc_open',    #Param1: proc_open ( string $cmd , array $descriptorspec , array &$pipes [, string $cwd [, array $env [, array $other_options ]]] )
     'shell_exec',   #Param1: shell_exec ( string $cmd )
     'system',       #Param1: system ( string $command [, int &$return_var ] )
     // 'pcntl_exec', #pcntl_exec ( string $path [, array $args [, array $envs ]] ) EXCUTE BINARY EXECUTABLE BY $path
@@ -400,8 +399,8 @@ $F_LDAP = array(
 // );
 
 // property oriented programming with unserialize
-$NAME_POP = 'PHP Object Injection';
-$F_POP = array(
+$NAME_POI = 'PHP Object Injection';
+$F_POI = array(
     'unserialize'					, #=> array(array(1), array()), // calls gadgets
     'yaml_parse'					, #=> array(array(1), array())	 // calls unserialize
 );

@@ -4,18 +4,11 @@ class VariableValue {
      * @var bool
      */
     public $userInput;
-    /**
-     * @var bool
-     */
     public $xss;
-    /**
-     * @var bool
-     */
     public $sql;
-    /**
-     * @var bool
-     */
-    public $command;
+    public $command; #command injection
+    public $lfi; #local file include
+    public $poi; #PHP object injection
 
     /**
      * @var array
@@ -36,8 +29,10 @@ class VariableValue {
         $this->xss = $defaultTaint;
         $this->sql = $defaultTaint;
         $this->command = $defaultTaint;
+        $this->lfi = $defaultTaint;
+        $this->poi = $defaultTaint;
         if ($defaultTaint == true) {
-            $this->value = "{USERINPUT_XSS_SQL_COMMAND}";
+            $this->value = "{USERINPUT_XSS_SQL_COMMAND_LFI_POI}";
         }
     }
 
@@ -368,6 +363,9 @@ class VariableStorage {
                             !($valTwo instanceof VariableValue) ||
                             $val->xss != $valTwo->xss ||
                             $val->sql != $valTwo->sql ||
+                            $val->command != $valTwo->command ||
+                            $val->lfi != $valTwo->lfi ||
+                            $val->poi != $valTwo->poi ||
                             $val->userInput != $valTwo->userInput ||
                             (!self::$ignoreFlow && $candOneSerialized != serialize($candTwo))) {
                             $same = false;
