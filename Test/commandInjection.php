@@ -51,6 +51,17 @@
 //------------ENDTEST5----------------//
 
 //------------TEST6 - PASSED----------------//
-
+//$a = $_POST["a"];
+//$b = "";
+//system(testFunc($a));
+//system(testFunc($b));
+//system(cleanFunc($a));
+//test($a);
+//function testFunc($arg) {
+//    echo $arg;
+//    return $arg;
+//}
+//function cleanFunc($arg) {
+//    return escapeshellarg($arg);
+//}
 //------------ENDTEST6----------------//
-?>
