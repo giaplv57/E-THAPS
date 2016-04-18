@@ -141,10 +141,10 @@ try {
 
     $stmts = $classTraverser->traverse($stmts);
     echo "Classes done\n";
+
     $stmts = $functionTraverser->traverse($stmts);
     $userDefinedFunctions = array_keys($functions);
     echo "Functions done\n";
-
 
     if (isset($options["f"]) || isset($options["fulltree"])) {
         echo "Full tree in use!\n";
