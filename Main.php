@@ -151,9 +151,6 @@ try {
         BodyVisitor::useFullTree(true);
     }
 
-
-
-
     if ($modelScope !== null) {
         $variableStorage = $modelScope;
     } else {

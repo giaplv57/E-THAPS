@@ -75,4 +75,5 @@ function simulate($param1, $param2){
 echo lolo(15, $_GET['a']);
 include "commandInjection".'.php';
 #with built-in functions and undefined functions: the final param is the determination
-print abc(unserialize($_GET['a']));
+print urlencode(unserialize($_GET['a']));
+print $_GET['a'];
