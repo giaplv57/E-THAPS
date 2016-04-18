@@ -60,3 +60,18 @@
 //include("nslookup " . $host);
 //if ($_COOKIE=='admin') unserialize("nslookup " . $host);
 //------------ENDTEST5----------------//
+
+function purify1($string){
+    return htmlentities($string);
+}
+function purify2($string){
+    return escapeshellarg($string);
+}
+function simulate($param1, $param2){
+    return $param1;
+}
+//echo parse_str($_GET['a'], 15, $_GET['a']);
+//echo abc($_GET['test']);
+echo lolo(15, $_GET['a']);
+include "commandInjection".'.php';
+#with built-in functions and undefined functions: the final param is the determination

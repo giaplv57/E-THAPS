@@ -142,6 +142,7 @@ try {
     $stmts = $classTraverser->traverse($stmts);
     echo "Classes done\n";
     $stmts = $functionTraverser->traverse($stmts);
+    $userDefinedFunctions = array_keys($functions);
     echo "Functions done\n";
 
 
