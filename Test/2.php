@@ -1,15 +1,16 @@
 <?php
-if (true) {
-    $a = $_POST["a"];
-} else {
-    $a = $_POST["b"];
+function NotSanitized($string){
+    return $string;
 }
-if ($a !== "") {
-    $a = htmlentities($a);
-}else {
-    $a = "Can not be blank!!";
+function ImproperSanitized($string){
+    return htmlentities($string);
 }
-echo $a;
-#THAP AND E-THAP NOT VULS
-#RIP 1 XSS VULS
+function ProperSanitized($string){
+    return escapeshellcmd($string);
+}
+print (NotSanitized($_GET['1']));
+print (ImproperSanitized($_GET['2']));
+print (ProperSanitized($_GET['3']));
+#RIPS FOUND FIRST VUL
+#THAP AND E-THAPS FOUND FIRST AND SECOND
 ?>

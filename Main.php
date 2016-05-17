@@ -31,8 +31,11 @@ try {
     if (!isset($_GET["file"])) {
 
         $options = getopt("fl:tw:cr:im:",array("fulltree","loop:","showtree","watch:","cleangetpost","requestid:", "ignoreflow","module:"));
-        if ((!isset($options["r"]) && !isset($options["requestid"])) && (!is_file($file = $argv[$argc - 2]))) {
+        if ((!isset($options["r"]) && !isset($options["requestid"])) && (!is_file($file = $argv[1]))) {
             die("Remember the filename!");
+        }
+        if ((!isset($options["r"]) && !isset($options["requestid"])) && is_file($file = $argv[1]) && !isset($argv[2])) {
+            $argv[2] = 'undefinedProjectID';
         }
     } else {
         $file = $_GET["file"];
@@ -323,7 +326,7 @@ function vulnerabiltyPrinter($vuln) {
     $flowpath     = preg_replace('/\/var(.*?)'.$projectID.'/m', '', nl2br(htmlentities($flowpath, ENT_QUOTES, 'UTF-8'))); 
     $dependencies = preg_replace('/\/var(.*?)'.$projectID.'/m', '', nl2br(htmlentities($dependencies, ENT_QUOTES, 'UTF-8'))); 
 
-//    resultToDB($projectID, $fileName, $description, $flowpath, $dependencies);
+    resultToDB($projectID, $fileName, $description, $flowpath, $dependencies);
     echo PHP_EOL;
     echo "-----------------------------------------------------------------------------------\n";
 }
