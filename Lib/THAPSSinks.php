@@ -29,6 +29,9 @@ $NAME_FILE_INCLUDE = 'File Inclusion';
 $F_FILE_INCLUDE = array(
     'include' 						, #Param1
     'include_once' 					, #Param1
+    'fgets'							, #Param1
+    'fgetss'						, #Param1
+    'fread'							, #Param1
     'parsekit_compile_file'			, #Param1: parsekit_compile_file ( string $filename [, array &$errors [, int $options = PARSEKIT_QUIET ]] )
     'require' 						, #Param1
     'require_once' 					, #Param1
